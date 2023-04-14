@@ -1,0 +1,214 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --back-color: antiquewhite;
+  --text-color: black;
+  --accent-color: teal;
+  --text-hover-color: white;
+  --back-hover-color: rgb(0, 189, 189);
+  --delete-color: tomato;
+  --post-back-color: rgba(255, 255, 255, 0.5);
+}
+
+body {
+  font-family: 'Montserrat';
+  background-color: var(--back-color);
+  color: var(--text-color);
+}
+
+body._dark {
+  --back-color: #555;
+  --text-color: white;
+  --text-hover-color: black;
+  --post-back-color: rgba(0, 0, 0, 0.5);
+}
+
+#root {
+  min-width: 430px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.App {
+  padding: 80px 50px 50px;
+  width: 100%;
+}
+
+.PostList button {
+  cursor: pointer;
+  outline: none;
+  border: 2px solid var(--text-color);
+  background-color: transparent;
+  color: var(--text-color);
+  padding: 5px 10px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.PostList .delete-btn:hover, .navbar button:hover {
+  color: var(--delete-color);
+  border-color: var(--delete-color);
+  transform: scale(1.1);
+}
+
+.PostList .delete-btn:active, .navbar button:active {
+  background-color: var(--delete-color);
+  color: white;
+  transform: scale(0.9);
+  transition: 0.1s;
+}
+
+input {
+  display: block;
+  height: 35px;
+  width: 300px;
+  padding: 5px 10px;
+}
+
+.PostList {
+  margin-top: 20px;
+}
+
+#title {
+  font-size: 30px;
+}
+
+.post {
+  width: 100%;
+  display: flex;
+  padding: 15px;
+  border: 2px solid var(--accent-color);
+  margin-top: 15px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  background-color: var(--post-back-color);
+  backdrop-filter: blur(3px);
+}
+
+.post__btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.PostFilter select {
+  margin-top: 10px;
+  color: var(--text-color);
+}
+
+.PostFilter select:not(:last-child) {
+  margin-right: 10px;
+}
+
+#themeBtn {
+  position: fixed;
+  top: 50%;
+  right: -10px;
+  transform: rotate(-90deg);
+}
+
+.post-enter {
+  opacity: 0;
+  transform: translateX(-350px);
+}
+.post-enter-active {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 300ms ease-in;
+}
+.post-exit {
+  opacity: 1;
+}
+.post-exit-active {
+  opacity: 0;
+  transform: translateX(-350px);
+  transition: all 300ms ease-in;
+}
+
+#centralizer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.page__wrapper {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-self: center;
+  gap: 5px;
+}
+
+.page {
+  display: block;
+  cursor: pointer;
+  flex: 0 0 45px;
+  height: 45px;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 50%;
+  line-height: 42px;
+  font-size: 16px;
+  transition: 100ms;
+}
+
+.page:hover {
+  font-weight: bold;
+  border-color: teal;
+}
+
+.page__current {
+  border: 3px solid teal;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar {
+  background-color: rgba(0, 128, 128, 0.7);
+  backdrop-filter: blur(3px);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 0 15px;
+}
+
+.navbar__links {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar__links a {
+  text-decoration: none;
+  color: white;
+  transition: 300ms;
+}
+
+.navbar__links a:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+}
+
+.navbar button {
+  color: white;
+  border-color: white;
+}

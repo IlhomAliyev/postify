@@ -1,0 +1,12 @@
+.mySelect {
+  cursor: pointer;
+  outline: none;
+  border: 2px solid var(--text-color);
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: transparent;
+}
+
+.mySelect:hover {
+  border-color: teal;
+}

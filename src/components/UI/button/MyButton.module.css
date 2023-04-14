@@ -1,0 +1,32 @@
+.myBtn {
+  cursor: pointer;
+  outline: none;
+  border: 2px solid var(--text-color);
+  background-color: transparent;
+  color: var(--text-color);
+  padding: 5px 10px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.myBtn:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.myBtn:active {
+  background-color: var(--accent-color);
+  color: white;
+  transform: scale(0.9);
+  transition: 0.1s;
+}
+
+.myBtn:disabled {
+  color: gray;
+  border-color: gray;
+}
+
+.myBtn:disabled:hover {
+  transform: scale(1);
+}

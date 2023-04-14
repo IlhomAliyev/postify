@@ -1,0 +1,16 @@
+.Login {
+  padding: 80px 50px 50px;
+}
+
+.Login h1 {
+  margin-bottom: 20px;
+}
+
+.Login input {
+  margin-bottom: 10px;
+}
+
+.login-btn {
+  display: block;
+  margin: 0 auto;
+}

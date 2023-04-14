@@ -1,0 +1,15 @@
+.About {
+  padding: 80px 50px 50px;
+}
+
+.About h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.About p {
+  font-size: 16px;
+  line-height: 140%;
+  text-indent: 50px;
+  text-align: justify;
+}

@@ -1,0 +1,19 @@
+.PostById {
+  padding: 80px 50px 50px;
+}
+
+.PostById h1 {
+  margin-bottom: 20px;
+}
+
+.post-title {
+  text-align: center;
+  text-transform: capitalize;
+  margin: 10px 0;
+}
+
+.com-wrapper {
+  background-color: var(--post-back-color);
+  padding: 15px;
+  border: 2px solid var(--accent-color);
+}

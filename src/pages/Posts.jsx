@@ -38,7 +38,7 @@ function Posts() {
 
   useObserver(lastElement, page < totalPages, isPostsLoading, () => {
     setPage(page + 1);
-    console.log(page);
+    // console.log(page);
   });
 
   useEffect(() => {
@@ -59,7 +59,7 @@ function Posts() {
   };
 
   return (
-    <div className="App">
+    <div className="Posts">
       <MyButton onClick={() => setModal(true)}>Create a post</MyButton>
       <MyModal visible={modal} setVisible={setModal}>
         <PostForm create={createPost} />

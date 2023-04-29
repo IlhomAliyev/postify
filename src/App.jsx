@@ -12,17 +12,19 @@ const App = () => {
   const hour = date.getHours();
 
   const [bodyTheme, setBodyTheme] = useState();
-  // hour >= 18 || hour <= 5
-  //   ? (document.body.className = '_dark')
-  //   : (document.body.className = '')
-  const themeSwitch = (pageTheme) => {
-    // if (document.body.className === '_dark') {
-    //   setBodyTheme((document.body.className = ''));
-    // } else {
-    //   setBodyTheme((document.body.className = '_dark'));
-    // }
-    setBodyTheme(pageTheme.classList.toggle('_dark'));
+  hour >= 18 || hour <= 5
+    ? (document.body.className = '_dark')
+    : (document.body.className = '');
+
+  const themeSwitch = () => {
+    document.body.className === '_dark'
+      ? setBodyTheme((document.body.className = ''))
+      : setBodyTheme((document.body.className = '_dark'));
   };
+
+  useEffect(() => {
+    themeSwitch();
+  }, [bodyTheme]);
   //! === Page Theme ===
 
   const [isAuth, setIsAuth] = useState(false);
@@ -33,14 +35,14 @@ const App = () => {
       setIsAuth(true);
     }
     setLoading(false);
-  }, [])
+  }, []);
 
   return (
     <AuthContext.Provider value={{ isAuth, setIsAuth, isLoading }}>
       <BrowserRouter>
         <Navbar />
         <AppRouter />
-        <MyButton onClick={() => themeSwitch(document.body)} id="themeBtn">
+        <MyButton onClick={() => themeSwitch()} id="themeBtn">
           Theme
         </MyButton>
       </BrowserRouter>

@@ -8,5 +8,5 @@
 }
 
 .mySelect:hover {
-  border-color: teal;
+  border-color: var(--accent-color);
 }

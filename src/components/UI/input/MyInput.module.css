@@ -1,7 +1,7 @@
 .myInput {
   width: 100%;
   padding: 5px 10px;
-  border: 2px solid teal;
+  border: 2px solid var(--accent-color);
   background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -12,6 +12,6 @@
 
 .myInput:focus {
   background-color: white;
-  border-color: green;
+  border-color: var(--accent-color);
   outline: none;
 }

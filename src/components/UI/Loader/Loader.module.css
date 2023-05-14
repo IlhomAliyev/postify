@@ -3,7 +3,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 8px dashed teal;
+  border: 8px dashed var(--accent-color);
   animation: rotate 1s infinite linear;
 }
 

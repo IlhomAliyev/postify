@@ -10,6 +10,7 @@
   --back-color: antiquewhite;
   --text-color: black;
   --accent-color: teal;
+  --transparent-accent-color: rgba(0, 128, 128, 0.7);
   --text-hover-color: white;
   --back-hover-color: rgb(0, 189, 189);
   --delete-color: tomato;
@@ -18,7 +19,7 @@
 
 body {
   font-family: 'Montserrat';
-  background-color: var(--back-color);
+  /* background-color: var(--back-color); */
   color: var(--text-color);
 }
 
@@ -27,6 +28,10 @@ body._dark {
   --text-color: white;
   --text-hover-color: black;
   --post-back-color: rgba(0, 0, 0, 0.5);
+
+  --accent-color: royalblue;
+  --transparent-accent-color: rgba(65, 105, 225, 0.7);
+  --back-hover-color: rgb(99, 129, 219);
 }
 
 #root {
@@ -52,13 +57,15 @@ body._dark {
   transition: 0.3s;
 }
 
-.PostList .delete-btn:hover, .navbar button:hover {
+.PostList .delete-btn:hover,
+.navbar button:hover {
   color: var(--delete-color);
   border-color: var(--delete-color);
   transform: scale(1.1);
 }
 
-.PostList .delete-btn:active, .navbar button:active {
+.PostList .delete-btn:active,
+.navbar button:active {
   background-color: var(--delete-color);
   color: white;
   transform: scale(0.9);
@@ -110,7 +117,7 @@ input {
 
 #themeBtn {
   position: fixed;
-  top: 50%;
+  top: 28%;
   right: -10px;
   transform: rotate(-90deg);
 }
@@ -164,17 +171,17 @@ input {
 
 .page:hover {
   font-weight: bold;
-  border-color: teal;
+  border-color: var(--accent-color);
 }
 
 .page__current {
-  border: 3px solid teal;
+  border: 3px solid var(--accent-color);
   font-size: 24px;
   font-weight: bold;
 }
 
 .navbar {
-  background-color: rgba(0, 128, 128, 0.7);
+  background-color: var(--transparent-accent-color);
   backdrop-filter: blur(3px);
 
   position: fixed;
@@ -211,4 +218,15 @@ input {
 .navbar button {
   color: white;
   border-color: white;
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  width: 100%;
+  object-fit: cover;
 }

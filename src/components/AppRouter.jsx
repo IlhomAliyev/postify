@@ -10,6 +10,7 @@ const AppRouter = () => {
   if (isLoading) {
     return <Loader />
   }
+
   return isAuth ? (
     <Routes>
       {privateRoutes.map((route) => (

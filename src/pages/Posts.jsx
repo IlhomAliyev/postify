@@ -6,15 +6,15 @@ import PostList from '../components/PostList';
 import Loader from '../components/UI/Loader/Loader';
 import MyModal from '../components/UI/MyModal/MyModal';
 import MyButton from '../components/UI/button/MyButton';
-import MySelect from '../components/UI/select/MySelect';
 import Pagination from '../components/UI/pagination/Pagination';
 import { useFetching } from '../hooks/useFetching';
+import { useObserver } from '../hooks/useObserver';
 import { usePosts } from '../hooks/usePosts';
 import '../styles/App.css';
 import { getPageCount } from '../utils/page';
-import { useObserver } from '../hooks/useObserver';
+import MyInput from '../components/UI/input/MyInput';
 
-function Posts() {
+const Posts = () => {
   const [posts, setPosts] = useState([]);
   const [filter, setFilter] = useState({ sort: '', query: '' });
   const [modal, setModal] = useState(false);
@@ -24,7 +24,7 @@ function Posts() {
   const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
   const lastElement = useRef();
 
-  //todo    ДЗ (2:00:00) воспользоваться useMemo и сделать так чтобы "этот" массив
+  //todo    СДЕЛАТЬ: (2:00:00) воспользоваться useMemo и сделать так чтобы "этот" массив
   //todo    не пересчитывался на каждом рендере
 
   const [fetchPosts, isPostsLoading, postError] = useFetching(
@@ -90,6 +90,6 @@ function Posts() {
       <Pagination page={page} changePage={changePage} totalPages={totalPages} />
     </div>
   );
-}
+};
 
 export default Posts;

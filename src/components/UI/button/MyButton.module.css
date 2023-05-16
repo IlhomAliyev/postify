@@ -10,8 +10,9 @@
 }
 
 .myBtn:hover {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
+  border-color: var(--transparent-accent-color);
+  background-color: var(--transparent-accent-color);
+  color: white;
   transform: scale(1.1);
 }
 

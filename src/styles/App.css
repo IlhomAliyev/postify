@@ -59,8 +59,9 @@ body._dark {
 
 .PostList .delete-btn:hover,
 .navbar button:hover {
-  color: var(--delete-color);
   border-color: var(--delete-color);
+  background-color: var(--delete-color);
+  color: white;
   transform: scale(1.1);
 }
 

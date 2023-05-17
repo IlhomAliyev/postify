@@ -15,12 +15,15 @@ const Login = () => {
 
   return (
     <div className="Login">
-      <h1>Login page</h1>
+      <h1>Login</h1>
       <form onSubmit={login}>
-        <MyInput required type="text" placeholder="Enter your username" />
-        <MyInput required type="password" placeholder="Enter the password" />
+        <MyInput required type="text" placeholder="Username" />
+        <MyInput required type="password" placeholder="Password" />
         <MyButton addClass="login-btn">Login</MyButton>
       </form>
+      <div id="hint">
+        <p>You can enter any username and password :)</p>
+      </div>
     </div>
   );
 };

@@ -62,7 +62,7 @@ const Posts = () => {
       <MyModal visible={modal} setVisible={setModal}>
         <PostForm create={createPost} />
       </MyModal>
-      <hr noshade style={{ margin: '15px 0' }} />
+      <hr style={{ margin: '15px 0' }} />
       <PostFilter
         limit={limit}
         setLimit={setLimit}

@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './MyButton.module.css';
+import classes from './MyButton.module.scss';
 
 const MyButton = ({ children, addClass, ...props }) => {
   const btnClasses = [classes.myBtn];

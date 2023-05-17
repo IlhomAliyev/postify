@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PostService from '../API/PostService';
-import PostFilter from '../components/PostFilter';
-import PostForm from '../components/PostForm';
-import PostList from '../components/PostList';
+import PostFilter from '../components/PostFilter/PostFilter';
+import PostForm from '../components/PostForm/PostForm';
+import PostList from '../components/PostList/PostList';
 import Loader from '../components/UI/Loader/Loader';
 import MyModal from '../components/UI/MyModal/MyModal';
 import MyButton from '../components/UI/button/MyButton';
@@ -10,9 +10,8 @@ import Pagination from '../components/UI/pagination/Pagination';
 import { useFetching } from '../hooks/useFetching';
 import { useObserver } from '../hooks/useObserver';
 import { usePosts } from '../hooks/usePosts';
-import '../styles/App.css';
+import '../styles/App.scss';
 import { getPageCount } from '../utils/page';
-import MyInput from '../components/UI/input/MyInput';
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -38,7 +37,6 @@ const Posts = () => {
 
   useObserver(lastElement, page < totalPages, isPostsLoading, () => {
     setPage(page + 1);
-    // console.log(page);
   });
 
   useEffect(() => {
@@ -46,7 +44,7 @@ const Posts = () => {
   }, [page, limit]);
 
   const createPost = (newPost) => {
-    setPosts([...posts, newPost]);
+    setPosts([newPost, ...posts]);
     setModal(false);
   };
 
@@ -64,7 +62,7 @@ const Posts = () => {
       <MyModal visible={modal} setVisible={setModal}>
         <PostForm create={createPost} />
       </MyModal>
-      <hr style={{ margin: '15px 0' }} />
+      <hr noshade style={{ margin: '15px 0' }} />
       <PostFilter
         limit={limit}
         setLimit={setLimit}
@@ -79,7 +77,7 @@ const Posts = () => {
       <PostList
         remove={removePost}
         posts={sortedAndSearchedPosts}
-        title="Posts about React JS"
+        title="Postify"
       />
       <div ref={lastElement} style={{ height: '20px' }}></div>
       {isPostsLoading && (

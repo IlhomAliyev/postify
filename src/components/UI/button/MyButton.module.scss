@@ -2,23 +2,23 @@
   cursor: pointer;
   outline: none;
   border: 2px solid var(--text-color);
+  border-radius: 10px;
   background-color: transparent;
   color: var(--text-color);
   padding: 5px 10px;
-  font-size: 14px;
+  font-size: 0.875em;
+  font-family: inherit;
   transition: 0.3s;
 }
 
 .myBtn:hover {
-  border-color: var(--transparent-accent-color);
-  background-color: var(--transparent-accent-color);
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
   color: white;
   transform: scale(1.1);
 }
 
 .myBtn:active {
-  background-color: var(--accent-color);
-  color: white;
   transform: scale(0.9);
   transition: 0.1s;
 }

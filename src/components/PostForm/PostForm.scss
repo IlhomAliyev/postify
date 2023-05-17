@@ -1,0 +1,41 @@
+@import '../../styles/Variables.scss';
+
+.PostForm {
+
+  input {
+    @extend %elemStyle;
+    border: none !important; // для отмены стиля из шаблона
+
+    margin-bottom: 10px;
+  }
+
+  textarea {
+    @extend %elemStyle;
+    border: none !important; // для отмены стиля из шаблона
+
+    opacity: 0.8;
+
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+
+    display: block;
+    width: 100%;
+    min-height: 80px;
+    max-width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 10px;
+
+    &::placeholder {
+      color: var(--placeholder-color);
+      font-style: italic;
+    }
+
+    &:focus,
+    &:hover {
+      opacity: 1;
+      outline: none;
+    }
+  }
+}

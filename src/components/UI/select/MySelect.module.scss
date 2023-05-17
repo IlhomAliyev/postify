@@ -1,0 +1,15 @@
+@import '../../../styles/Variables.scss';
+
+.mySelect {
+  @extend %elemStyle;
+  border: none !important;
+  
+  cursor: pointer;
+  padding: 8px 15px;
+  outline: none;
+  color: inherit;
+  border-radius: 10px;
+  font-size: inherit;
+  font-family: inherit;
+  transition: 300ms;
+}

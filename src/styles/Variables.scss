@@ -1,0 +1,31 @@
+:root {
+  --text-color: rgba(36, 34, 32, 1);
+  --text-hover-color: white;
+  --accent-color: dodgerblue;
+  --delete-color: #ff5a52;
+  --placeholder-color: gray;
+}
+
+body._dark {
+  --text-color: white;
+  --text-hover-color: black;
+  --placeholder-color: lightgray;
+}
+
+body {
+  %elemStyle {
+    background-color: rgba(255, 237, 224, 0.56);
+    border: 1px solid rgba(245, 239, 235, 0.4);
+    // box-shadow: 0px 64px 64px -32px rgba(102, 37, 0, 0.56);
+    backdrop-filter: blur(30px);
+  }
+}
+
+body._dark {
+  %elemStyle {
+    background-color: rgba(15, 9, 12, 0.56);
+    border-color: rgba(45, 17, 17, 0.8);
+    // box-shadow: 0px 56px 64px -16px rgba(41, 15, 0, 0.56),
+      // 0px 64px 64px -32px rgba(102, 37, 0, 0.56);
+  }
+}

@@ -1,0 +1,26 @@
+@import '../../../styles/Variables.scss';
+
+.myInput {
+  @extend %elemStyle;
+
+  display: block;
+  color: inherit;
+  opacity: 0.8;
+  width: 100%;
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: inherit;
+  transition: 300ms;
+
+  &::placeholder {
+    color: var(--placeholder-color);
+    font-style: italic;
+  }
+
+  &:focus, &:hover {
+    opacity: 1;
+    outline: none;
+  }
+}

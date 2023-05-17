@@ -1,0 +1,75 @@
+@import '../../../styles/Variables.scss';
+
+.navbarContainer {
+  padding: 0 20px;
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.navbar {
+  @extend %elemStyle;
+  border-top: none !important;
+
+  box-shadow: 0px 64px 64px -32px rgba(102, 37, 0, 0.56);
+
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 15px 15px 15px 25px;
+  border-radius: 0 0 15px 15px;
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    a {
+      text-decoration: none;
+      color: var(--text-color);
+      transition: 300ms;
+
+      &:hover {
+        transform: scale(1.1);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    #logOut {
+      color: inherit;
+      border-color: var(--text-color);
+
+      &:hover {
+        border-color: var(--delete-color);
+        background-color: var(--delete-color);
+        color: white;
+        transform: scale(1.1);
+      }
+
+      &:active {
+        transform: scale(0.9);
+        transition: 0.1s;
+      }
+    }
+  }
+}
+
+body._dark {
+  .navbarContainer {
+    .navbar {
+      box-shadow: 0px 56px 64px -16px rgba(41, 15, 0, 0.56),
+        0px 64px 64px -32px rgba(102, 37, 0, 0.56);
+    }
+  }
+}

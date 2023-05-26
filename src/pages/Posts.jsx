@@ -14,17 +14,21 @@ import '../styles/App.scss';
 import { getPageCount } from '../utils/page';
 
 const Posts = () => {
-  const [posts, setPosts] = useState([]);
-  const [filter, setFilter] = useState({ sort: '', query: '' });
   const [modal, setModal] = useState(false);
-  const [totalPages, setTotalPages] = useState(0);
-  const [limit, setLimit] = useState(10);
-  const [page, setPage] = useState(1);
-  const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
-  const lastElement = useRef();
 
-  //todo    СДЕЛАТЬ: (2:00:00) воспользоваться useMemo и сделать так чтобы "этот" массив
-  //todo    не пересчитывался на каждом рендере
+  const [posts, setPosts] = useState([]);
+
+  const [page, setPage] = useState(1);
+
+  const [filter, setFilter] = useState({ sort: '', query: '' });
+
+  const [totalPages, setTotalPages] = useState(0);
+
+  const [limit, setLimit] = useState(10);
+
+  const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
+
+  const lastElement = useRef();
 
   const [fetchPosts, isPostsLoading, postError] = useFetching(
     async (limit, page) => {

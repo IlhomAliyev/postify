@@ -1,9 +1,9 @@
 import React from 'react';
 import { getPagesArray } from '../../../utils/page';
 
-const Pagination = ({totalPages, page, changePage}) => {
+const Pagination = ({ totalPages, page, changePage }) => {
   let pagesArray = getPagesArray(totalPages);
-  
+
   return (
     <div className="page__wrapper">
       {pagesArray.map((p) => (

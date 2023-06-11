@@ -5,7 +5,7 @@ import { AuthContext } from '../../../context';
 import './Navbar.scss';
 
 const Navbar = ({ themeSwitch }) => {
-  const { isAuth, setIsAuth } = useContext(AuthContext);
+  const { setIsAuth } = useContext(AuthContext);
 
   const logOut = () => {
     setIsAuth(false);
@@ -19,6 +19,7 @@ const Navbar = ({ themeSwitch }) => {
           <Link to="/about">About</Link>
           <Link to="/posts">Posts</Link>
         </div>
+        <h1>Postify</h1>
         <div className="navbar__btns">
           <MyButton onClick={themeSwitch} id="themeBtn">
             Theme

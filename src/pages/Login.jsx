@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import MyInput from '../components/UI/input/MyInput';
 import MyButton from '../components/UI/button/MyButton';
-import '../styles/Login.scss';
+import MyInput from '../components/UI/input/MyInput';
 import { AuthContext } from '../context';
+import '../styles/Login.scss';
 
 const Login = () => {
-  const { isAuth, setIsAuth } = useContext(AuthContext);
+  const { setIsAuth } = useContext(AuthContext);
 
   const login = (event) => {
     event.preventDefault();

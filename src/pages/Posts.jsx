@@ -78,12 +78,8 @@ const Posts = () => {
           An error has occurred: {postError}
         </h1>
       )}
-      <PostList
-        remove={removePost}
-        posts={sortedAndSearchedPosts}
-        title="Postify"
-      />
-      <div ref={lastElement} style={{ height: '20px' }}></div>
+      <PostList remove={removePost} posts={sortedAndSearchedPosts} />
+      <div ref={lastElement} style={{ height: '20px' }}></div>      
       {isPostsLoading && (
         <div id="centralizer">
           <Loader />

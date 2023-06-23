@@ -1,9 +1,9 @@
 {
   "homepage": "./",
-  "description": "React JS Template by AIM",
+  "description": "Postify APP",
   "author": "AIM",
   "license": "ISC",
-  "name": "react-template",
+  "name": "postify",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
